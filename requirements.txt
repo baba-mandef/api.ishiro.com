@@ -1,3 +1,7 @@
-# django.core
+# Django.core
 Django==4.2
 djangorestframework==3.14.0
+
+# Auth
+Pyjwt==2.8.0
+social-auth-app-django==5.4.0 
