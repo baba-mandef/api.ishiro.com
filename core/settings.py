@@ -30,9 +30,20 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-CORE_APPS = []
+CORE_APPS = [
+    'ishiro',
+    'ishiro.abstract',
+    'ishiro.extra',
+    'ishiro.user',
+    'ishiro.account',
+    'ishiro.auth',
+    
+    
+]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'rest_framework',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
