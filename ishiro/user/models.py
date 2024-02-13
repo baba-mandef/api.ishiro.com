@@ -45,7 +45,7 @@ class User(IshiroObject, AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
-    joined = models.DateField(default=timezone.now())
+    joined = models.DateField(default=timezone.now)
 
     objects = UserManager()
 
