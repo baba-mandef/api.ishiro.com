@@ -2,5 +2,9 @@
 Django==4.2
 djangorestframework==3.14.0
 
-# Auth
+# Security
 Pyjwt==2.8.0
+
+# Tools
+pillow==10.2.0
+
