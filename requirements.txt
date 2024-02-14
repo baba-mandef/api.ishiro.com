@@ -7,3 +7,4 @@ Pyjwt==2.8.0
 
 # Tools
 pillow==10.2.0
+
