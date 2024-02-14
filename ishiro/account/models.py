@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
-from ishiro.extra.utils import generate_random_digits
+from ishiro.extra.tools import generate_random_digits
 
 class AccountMixin(models.Model):
     avatar = models.ImageField(null=True, upload_to="avatar/")
@@ -9,7 +9,7 @@ class AccountMixin(models.Model):
     deactivated = models.DateTimeField(null=True)
     verified = models.DateTimeField(null=True)
     verification_code = models.CharField(max_length=6)
-    deactivated_reason = models.CharField(max_length=500, null=True blank=True)
+    deactivated_reason = models.CharField(max_length=500, null=True, blank=True)
 
     def activate(self):
         assert not self.activate, _("This account is already activated")

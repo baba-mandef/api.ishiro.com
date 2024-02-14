@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError, ObjectDoesNotExist
-from ishiro.extra.utils import uuid_generator
+from ishiro.extra.tools import uuid_generator
 
 
 class IshiroObjectManager(models.Manager):
