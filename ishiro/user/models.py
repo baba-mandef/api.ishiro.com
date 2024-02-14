@@ -8,7 +8,7 @@ from django.utils import timezone
 
 class UserManager(BaseUserManager):
 
-    def create(self, email, password=None, **extra_fields):
+    def create_user(self, email, password=None, **extra_fields):
 
         if not email:
             raise ValueError('Users must have an email address')
@@ -43,6 +43,7 @@ class User(IshiroObject, AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=150, unique=True, db_index=True)
     is_active = models.BooleanField(default=True)
+    is_saver = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
     joined = models.DateField(default=timezone.now)
