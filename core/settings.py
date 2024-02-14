@@ -27,15 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-# Application definition
-
+##########################
+##Application definition##
+##########################
 CORE_APPS = [
     'ishiro',
     'ishiro.abstract',
     'ishiro.extra',
     'ishiro.user',
     'ishiro.account',
+    'ishiro.account.saver',
     'ishiro.auth',
     
     
@@ -53,6 +54,22 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ] + CORE_APPS + THIRD_PARTY_APPS
+
+
+##########################
+#######JWT SETTINGS#######
+##########################
+
+JWT_TOKEN_VALIDITY_TIME = 60 * 2
+JWT_REFRESH_TOKEN_VALIDITY_TIME = 60 * 5
+JWT_SECRET = "ishoro&ivh_lwom(jwn72i^0*-&b--qa(&*s^@wmg&#5czurzg6xv58mfinapp"
+
+##########################
+########User Model########
+##########################
+
+AUTH_USER_MODEL = 'ishiro_user.User'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
