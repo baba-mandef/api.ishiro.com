@@ -38,6 +38,7 @@ CORE_APPS = [
     'ishiro.account',
     'ishiro.account.saver',
     'ishiro.auth',
+    'ishiro.wallet',
     
     
 ]
