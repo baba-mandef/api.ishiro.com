@@ -39,6 +39,14 @@ CORE_APPS = [
     'ishiro.account.saver',
     'ishiro.auth',
     'ishiro.wallet',
+    'ishiro.activity',
+    'ishiro.activity.income',
+    'ishiro.activity.expense',
+    'ishiro.activity.transfer',
+    'ishiro.category',
+    'ishiro.category.income',
+    'ishiro.category.expense',
+    'ishiro.category.wallet',
     
     
 ]
