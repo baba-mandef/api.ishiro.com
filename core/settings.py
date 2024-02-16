@@ -44,9 +44,6 @@ CORE_APPS = [
     'ishiro.activity.expense',
     'ishiro.activity.transfer',
     'ishiro.category',
-    'ishiro.category.income',
-    'ishiro.category.expense',
-    'ishiro.category.wallet',
     
     
 ]
