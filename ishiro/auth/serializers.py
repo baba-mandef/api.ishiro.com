@@ -47,6 +47,7 @@ class LoginSerializer(serializers.Serializer):
         account_data["email"] = user.email
         account_data["name"] = user.name
         account_data["avatar"] = account.avatar.url
+        account_data["balance"] = account.balance
         account_data["currency"] = account.currency
 
         return account_data
