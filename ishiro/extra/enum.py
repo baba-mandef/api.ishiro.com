@@ -18,3 +18,9 @@ class CategoryTypeEnum(BaseEnum):
     income = "income"
     expense = "expense"
     wallet = "wallet"
+
+
+class ActivityTypeEnum(BaseEnum):
+    income = "income"
+    expense = "expense"
+    
