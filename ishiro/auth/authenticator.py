@@ -47,7 +47,7 @@ class JWTAuth(BaseAuthentication):
         user_model = get_user_model()
 
         try:
-            user = user_model.objects.get_by_public(public_id=payload["id"])
+            user = user_model.objects.get_by_public_id(public_id=payload["id"])
         except (user_model.DoesNotExist, KeyError):
             raise exceptions.AuthenticationFailed(self.message)
 

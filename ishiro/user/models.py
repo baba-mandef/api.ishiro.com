@@ -2,11 +2,11 @@ from typing import Any
 from django.contrib.auth.models import (
     AbstractBaseUser, PermissionsMixin, BaseUserManager)
 from django.db import models
-from ishiro.abstract.models import IshiroObject
+from ishiro.abstract.models import IshiroObject, IshiroObjectManager
 from django.utils import timezone
 
 
-class UserManager(BaseUserManager):
+class UserManager(BaseUserManager, IshiroObjectManager ):
 
     def create_user(self, email, password=None, **extra_fields):
 
