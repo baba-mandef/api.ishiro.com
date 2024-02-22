@@ -42,6 +42,7 @@ CORE_APPS = [
     'ishiro.activity',
     'ishiro.transfer',
     'ishiro.category',
+    'ishiro.extra.data'
     
     
 ]
@@ -74,6 +75,22 @@ JWT_SECRET = "ishoro&ivh_lwom(jwn72i^0*-&b--qa(&*s^@wmg&#5czurzg6xv58mfinapp"
 
 AUTH_USER_MODEL = 'ishiro_user.User'
 
+##########################
+########STAFF MAIL########
+##########################
+ISHIRO_STAFF_EMAIL = [
+    'contact@ishiro.bj',
+    'contact@abiodoun.dev',
+]
+
+##########################
+######REST FRAMEWORK######
+##########################
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'ishiro.auth.authenticator.JWTAuth',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
