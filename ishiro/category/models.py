@@ -7,7 +7,6 @@ class Category(IshiroObject):
     label = models.CharField(max_length=30)
     description = models.CharField(max_length=500, null=True, blank=True)
     icon = models.CharField(max_length=15)
-    color = models.CharField(max_length=10)
     category_type = models.CharField(max_length=10, choices=CategoryTypeEnum.items())
 
 
