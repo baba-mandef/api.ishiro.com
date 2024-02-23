@@ -89,7 +89,13 @@ ISHIRO_STAFF_EMAIL = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'ishiro.auth.authenticator.JWTAuth',
-    ]
+    ],
+
+    'DEFAULT_PERMISSION_CLASSES':[ 
+
+        'rest_framework.permissions.IsAuthenticated',
+
+    ],
 }
 
 MIDDLEWARE = [
