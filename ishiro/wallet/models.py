@@ -12,5 +12,4 @@ class Wallet(IshiroObject):
     
     def __str__(self) -> str:
         return f"{self.label} - {self.balance}"
-
-
+    
