@@ -62,7 +62,7 @@ class User(IshiroObject, AbstractBaseUser, PermissionsMixin):
         return bool(role) and self.is_active
     
     def __str__(self) -> str:
-        return f"{self.public_id.hex} / {self.email}"
+        return f"{self.name} - {self.email}"
 
     @property
     def name(self):
