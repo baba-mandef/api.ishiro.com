@@ -43,7 +43,8 @@ class LoginSerializer(serializers.Serializer):
         account = Saver.objects.get(user=user)
         account_data = {}
        
-        account_data["id"] = user.public_id
+        account_data["public_id"] = user.public_id
+        account_data["id"] = user.id
         account_data["email"] = user.email
         account_data["name"] = user.name
         account_data["avatar"] = account.avatar.url

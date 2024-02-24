@@ -5,4 +5,9 @@ from ishiro.category.models import Category
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['label', 'description', 'icon', 'category_type',]
+        fields = ['id', 'public_id', 'label',
+                  'description', 'icon', 'category_type',]
+        extra_kwargs = {
+            'public_id': {'read_only': True, 'required': False, },
+            'id': {'read_only': True, 'required': False, },
+        }
