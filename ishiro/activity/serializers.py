@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from ishiro.activity.models import Activity
+from ishiro.budget.models import Budget
 
 
 class ActivitySerializer(serializers.ModelSerializer):
@@ -8,12 +9,13 @@ class ActivitySerializer(serializers.ModelSerializer):
         context = self.context
         _activity_type = context.get('activity_type')
         category_type = attrs.get('category').category_type
-        
+
         if _activity_type != category_type:
-            raise serializers.ValidationError({'activity_type': 'Activity type must be the same as category type'})
+            raise serializers.ValidationError(
+                {'activity_type': 'Activity type must be the same as category type'})
         else:
             attrs['activity_type'] = _activity_type
-        
+
         return attrs
 
     def create(self, validated_data):
@@ -22,6 +24,9 @@ class ActivitySerializer(serializers.ModelSerializer):
         wallet = activity.wallet
         amount = activity.amount
         owner = wallet.owner
+        
+        
+        
 
         if _activity_type == 'income':
             wallet.balance += amount
@@ -29,6 +34,14 @@ class ActivitySerializer(serializers.ModelSerializer):
         elif _activity_type == 'expense':
             wallet.balance -= amount
             owner.balance -= amount
+
+            category = activity.category
+            activity_month = activity.created_at.month
+            budget = Budget.objects.filter(category=category, period__month=activity_month).first()
+
+            budget.spent += amount
+            budget.remaining -= amount
+            budget.save()
 
         wallet.save()
         owner.save()
