@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate
 from importlib import import_module
 from ishiro.account.saver.models import Saver
 
+
 class LoginSerializer(serializers.Serializer):
     """
     Token authentication serializer class
@@ -39,10 +40,10 @@ class LoginSerializer(serializers.Serializer):
         return attrs
 
     def get_account_data(self, user):
-        
+
         account = Saver.objects.get(user=user)
         account_data = {}
-       
+
         account_data["public_id"] = user.public_id
         account_data["id"] = user.id
         account_data["email"] = user.email
@@ -52,6 +53,3 @@ class LoginSerializer(serializers.Serializer):
         account_data["currency"] = account.currency
 
         return account_data
-    
-
-
