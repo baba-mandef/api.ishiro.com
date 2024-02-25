@@ -6,6 +6,7 @@ from ishiro.extra.data.viewsets import PopulateViewSet
 from ishiro.wallet.viewsets import WalletViewSet
 from ishiro.activity.viewsets import ActivityViewSet
 from ishiro.transfer.viewsets import TransferViewSet
+from ishiro.budget.viewsets import BudgetViewSet
 
 
 from django.urls import path, include
@@ -27,6 +28,9 @@ Router.register("wallet", WalletViewSet, "wallet")
 
 #transfer
 Router.register("transfer", TransferViewSet, "transfer")
+
+#budget
+Router.register("budget", BudgetViewSet, "budget")
 
 #populate
 Router.register("populate", PopulateViewSet, "populate")
