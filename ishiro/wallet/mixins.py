@@ -1,0 +1,3 @@
+
+class WalletMixin():
+    pass
